@@ -2,4 +2,22 @@
     <string name="app_name">ShoesStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signUp">Sign Up</string>
+    <string name="welcomeText">Welcome to The Shoe Store</string>
+    <string name="welcomeText2">Happy to see you and hope to see you again!</string>
+    <string name="next">Next</string>
+    <string name="instructionText2">You can see the shoes list in the next screen and you can add a new shoe as you can from the \'+\' button</string>
+    <string name="shoeNameLabel">Shoe Name</string>
+    <string name="name">Name</string>
+    <string name="shoeCompanyLabel">Shoe Company</string>
+    <string name="company">Company</string>
+    <string name="shoeSizeLabel">Shoe Size</string>
+    <string name="size">Size</string>
+    <string name="shoeDescription">Shoe Description</string>
+    <string name="Description">Description</string>
+
+
 </resources>

@@ -9,13 +9,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.mostafa.shoesstore.R
-import com.mostafa.shoesstore.databinding.FragmentSplashBinding
+import com.mostafa.shoesstore.databinding.FragmentShoesListBinding
 import com.mostafa.shoesstore.viewmodel.ShoesViewModel
 
 
-class SplashFragment : Fragment() {
+class ShoesListFragment : Fragment() {
 
-    private lateinit var binding: FragmentSplashBinding
+    private lateinit var binding: FragmentShoesListBinding
     private val viewModel: ShoesViewModel by activityViewModels()
     private lateinit var navController: NavController
 
@@ -23,20 +23,20 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSplashBinding.inflate(layoutInflater,container,false)
+        binding = FragmentShoesListBinding.inflate(layoutInflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         navController = Navigation.findNavController(binding.root)
 
-        binding.nextBtn.setOnClickListener {
-            navController.navigate(R.id.instructionsFragment)
+        binding.addNewShoeBtn.setOnClickListener {
+
+            navController.navigate(R.id.addNewShoeFragment)
+
         }
 
     }
-
 
 }

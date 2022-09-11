@@ -2,12 +2,36 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mostafa.shoesstore.ui.LoginFragment"
+        android:label="LoginFragment" />
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.mostafa.shoesstore.ui.SplashFragment"
+        android:label="Shoes Story" />
 
-        />
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.mostafa.shoesstore.ui.InstructionsFragment"
+        android:label="Shoes Story InstructionsF" />
+
+    <fragment
+        android:id="@+id/shoesListFragment"
+        android:name="com.mostafa.shoesstore.ui.ShoesListFragment"
+        android:label="Shoes List" />
+
+    <fragment
+        android:id="@+id/addNewShoeFragment"
+        android:name="com.mostafa.shoesstore.ui.AddNewShoeFragment"
+        android:label="Add New Shoe"
+        tools:layout="@layout/fragment_add_new_shoe" />
+
 
 </navigation>

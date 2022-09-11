@@ -13,4 +13,29 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="defaultTextViewStyle">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="boldTextViewStyle" parent="defaultTextViewStyle">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="buttonStyle"
+        parent="boldTextViewStyle"
+        >
+        <item name="backgroundTint">@color/buttonColor</item>
+    </style>
+    
 </resources>
