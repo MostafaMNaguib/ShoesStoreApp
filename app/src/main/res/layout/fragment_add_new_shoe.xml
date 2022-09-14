@@ -93,6 +93,7 @@
         android:theme="@style/defaultTextViewStyle"
         android:hint="@string/size"
         android:singleLine="true"
+        android:inputType="numberDecimal"
         android:maxLines="1"
         />
 
@@ -121,6 +122,18 @@
         android:hint="@string/Description"
         android:singleLine="true"
         android:maxLines="1"
+        />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@id/nextBtn"
+        android:theme="@style/buttonStyle"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
         />
 
     <Button

@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.mostafa.shoesstore.R
+import com.mostafa.shoesstore.data.models.ShoeDataModel
 import com.mostafa.shoesstore.databinding.FragmentAddNewShoeBinding
 import com.mostafa.shoesstore.viewmodel.ShoesViewModel
 
@@ -31,8 +32,54 @@ class AddNewShoeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(binding.root)
 
+        binding.nextBtn.setOnClickListener {
+            addShoe()
+        }
 
+        binding.cancelBtn.setOnClickListener {
+            navController.navigate(R.id.actionAddShoe)
+        }
 
     }
+
+    private fun addShoe(){
+
+        val shoeName = binding.shoeNameEt.text.toString()
+        val shoeCompany = binding.shoeCompanyEt.text.toString()
+        val shoeDescription = binding.shoeDescriptionEt.text.toString()
+        val shoeSize = binding.shoeSizeEt.text.toString()
+
+        if (shoeName.isNotEmpty()&&
+            shoeCompany.isNotEmpty()&&
+            shoeDescription.isNotEmpty()&&
+            shoeSize.isNotEmpty()){
+            viewModel.addNewShoe(ShoeDataModel(shoeName,shoeSize.toDouble(),shoeCompany,shoeDescription))
+            binding.shoeNameEt.setText("")
+            binding.shoeCompanyEt.setText("")
+            binding.shoeDescriptionEt.setText("")
+            binding.shoeSizeEt.setText("")
+            navController.navigate(R.id.actionAddShoe)
+        }else{
+            if (shoeName.isEmpty()){
+                binding.shoeNameEt.error = "Name is required"
+            }
+
+            if (shoeCompany.isEmpty()){
+                binding.shoeCompanyEt.error = "Company is required"
+            }
+
+            if (shoeName.isEmpty()){
+                binding.shoeSizeEt.error = "Size is required"
+            }
+
+            if (shoeName.isEmpty()){
+                binding.shoeDescriptionEt.error = "Description is required"
+            }
+
+        }
+
+    }
+
+
 
 }

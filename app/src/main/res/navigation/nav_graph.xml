@@ -25,13 +25,25 @@
     <fragment
         android:id="@+id/shoesListFragment"
         android:name="com.mostafa.shoesstore.ui.ShoesListFragment"
-        android:label="Shoes List" />
+        android:label="Shoes List" >
+        <action
+            android:id="@+id/actionLogout"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/addNewShoeFragment"
         android:name="com.mostafa.shoesstore.ui.AddNewShoeFragment"
         android:label="Add New Shoe"
-        tools:layout="@layout/fragment_add_new_shoe" />
+        tools:layout="@layout/fragment_add_new_shoe" >
+        <action
+            android:id="@+id/actionAddShoe"
+            app:destination="@id/shoesListFragment"
+            app:popUpTo="@id/shoesListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 
 </navigation>

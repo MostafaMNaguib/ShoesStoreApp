@@ -5,6 +5,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ScrollView
+        android:id="@+id/shoesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addNewShoeBtn"
+        android:layout_margin="15dp"
+        >
+        <LinearLayout
+            android:id="@+id/shoeItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
+
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addNewShoeBtn"
@@ -14,6 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20dp"
         app:srcCompat="@drawable/ic_add"
+        android:contentDescription="@string/add_shoe"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
