@@ -12,7 +12,7 @@ class ShoesViewModel:ViewModel()
 
     private val _shoesDataList = MutableLiveData<MutableList<ShoeDataModel>>()
     val shoesDataList : LiveData<MutableList<ShoeDataModel>>
-    get() = _shoesDataList
+        get() = _shoesDataList
 
     var newShoeName = ""
     var newShoeCompany = ""
@@ -25,14 +25,32 @@ class ShoesViewModel:ViewModel()
         addFakeShoesData()
     }
 
-    fun addNewShoe(shoe: ShoeDataModel){
-        _shoesDataList.value!!.add(shoe)
+    fun addNewShoe(){
+        _shoesDataList.value!!.add(
+            ShoeDataModel(newShoeName,newShoeSize.toDouble(),newShoeCompany,newShoeDescription)
+        )
         Log.e("ShoesViewModel", "addNewShoe: ${shoesDataList.value}" )
         Timber.e( "addNewShoe: $shoesDataList " )
     }
 
     private fun addFakeShoesData(){
-        addNewShoe(ShoeDataModel("Shoe", 7.0, "Company ", "Shoe Desc"))
+        _shoesDataList.value!!.add(
+            ShoeDataModel("Shoe", 7.0, "Company ", "Shoe Desc")
+        )
+    }
+
+    fun checkInputValidation():Boolean{
+
+        if (
+            newShoeName.isBlank()||
+            newShoeCompany.isBlank()||
+            newShoeSize.isBlank()||
+            newShoeDescription.isBlank()
+        ){
+            return false
+        }
+        return true
+
     }
 
 

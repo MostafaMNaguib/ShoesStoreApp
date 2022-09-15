@@ -44,35 +44,28 @@ class AddNewShoeFragment : Fragment() {
 
     private fun addShoe(){
 
-        val shoeName = binding.shoeNameEt.text.toString()
-        val shoeCompany = binding.shoeCompanyEt.text.toString()
-        val shoeDescription = binding.shoeDescriptionEt.text.toString()
-        val shoeSize = binding.shoeSizeEt.text.toString()
 
-        if (shoeName.isNotEmpty()&&
-            shoeCompany.isNotEmpty()&&
-            shoeDescription.isNotEmpty()&&
-            shoeSize.isNotEmpty()){
-            viewModel.addNewShoe(ShoeDataModel(shoeName,shoeSize.toDouble(),shoeCompany,shoeDescription))
+        if (viewModel.checkInputValidation()){
+            viewModel.addNewShoe()
             binding.shoeNameEt.setText("")
             binding.shoeCompanyEt.setText("")
             binding.shoeDescriptionEt.setText("")
             binding.shoeSizeEt.setText("")
             navController.navigate(R.id.actionAddShoe)
         }else{
-            if (shoeName.isEmpty()){
+            if (viewModel.newShoeName.isEmpty()){
                 binding.shoeNameEt.error = "Name is required"
             }
 
-            if (shoeCompany.isEmpty()){
+            if (viewModel.newShoeCompany.isEmpty()){
                 binding.shoeCompanyEt.error = "Company is required"
             }
 
-            if (shoeName.isEmpty()){
+            if (viewModel.newShoeSize.isEmpty()){
                 binding.shoeSizeEt.error = "Size is required"
             }
 
-            if (shoeName.isEmpty()){
+            if (viewModel.newShoeDescription.isEmpty()){
                 binding.shoeDescriptionEt.error = "Description is required"
             }
 
