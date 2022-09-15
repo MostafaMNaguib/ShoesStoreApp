@@ -14,7 +14,10 @@ class ShoesViewModel:ViewModel()
     val shoesDataList : LiveData<MutableList<ShoeDataModel>>
     get() = _shoesDataList
 
-
+    var newShoeName = ""
+    var newShoeCompany = ""
+    var newShoeSize = ""
+    var newShoeDescription = ""
 
     init {
         Log.e("ShoesViewModel", "ViewModel: ")
